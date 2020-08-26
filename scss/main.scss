@@ -1,0 +1,172 @@
+@import "./resets";
+@import "./variables";
+
+
+
+.attribution {
+    font-size: 15px;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+#logo {
+    margin: 3.5rem;
+    width: 20%;
+    grid-area: logo;
+}
+
+body {
+    font-family: $font-family;
+    font-size: $font-size;
+    background-image: url("../Imgs/bg-pattern-desktop.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    & main {
+        // display: flex;
+         display: grid;
+             grid-template-columns: 1fr 1fr ;
+             grid-template-rows: 20% 1fr 1fr 5%;
+             gap: 2px;
+            
+            grid-template-areas: 
+            " logo  side-B"
+            " side-A  side-B"
+            " side-A  side-B"
+            " footer  side-B"
+            
+            
+            ;
+
+        & .side-A {
+            
+            grid-area: side-A;
+           
+
+            & h1 {
+                padding: 0.4em 2rem;
+                text-transform: uppercase;
+                font-size: 4vw;
+                color: $first-text-color;
+                font-weight: map-get($font-weight, bold);
+
+                & span {
+                    display: block;
+                    padding-top: 2px;
+                    color: $second-text-color;
+                    margin-bottom: 3rem;
+                }
+            }
+            & >p {
+                width: 25em;
+                padding: 2em;
+                
+            }
+            & form {
+                position: relative;
+               
+
+                & input {
+                    padding: 0.75em 4em;
+                    margin: 4.1rem 2rem;
+                    border-radius: 26px;
+
+                    
+                    
+                
+                }
+                & button {
+                    height: 3em;
+                    position: absolute;
+                    border: 2px solid;
+                    bottom: 65px;
+                    left: 255px;
+                    
+                   
+                   
+                    background-color: $button-bg-color;
+                    padding: 1em 2em;
+                    border-radius: 26px;
+                }
+            }
+            
+        }
+        & footer {
+        
+            grid-area: footer;
+    
+    
+        }
+    }
+    
+}
+
+section.side-B {
+    background-image: url("../Imgs/hero-desktop.jpg");
+    height: 100vh;
+    background-repeat: no-repeat;
+    grid-area: side-B;
+    background-size: 100% 100%;
+    
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 400px) {
+
+    main {
+        display: grid;
+        overflow: auto;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(auto,4);
+        
+       
+       grid-template-areas: 
+       " logo"
+       " side-B"
+       " side-A"
+       " footer"
+       ;
+        
+    }
+    
+
+    .side-B {
+        background-image: url("../Imgs/hero-mobile.jpg");
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        margin: 10% 0;
+        grid-area: side-B;
+       
+    }
+    .side-A {
+        grid-area: side-A;
+        & p{
+            
+            font-size: 20vw;
+        }
+       
+    }
+    #logo{
+        grid-area: logo;
+    }
+    footer p{
+        grid-area: footer;
+        margin: 0 2rem;
+       
+        color: red;
+       
+    }
+}

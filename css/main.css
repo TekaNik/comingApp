@@ -1,0 +1,151 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.attribution {
+  font-size: 15px;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+#logo {
+  margin: 3.5rem;
+  width: 20%;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: logo;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1em;
+  background-image: url("../Imgs/bg-pattern-desktop.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+body main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 20% 1fr 1fr 5%;
+      grid-template-rows: 20% 1fr 1fr 5%;
+  gap: 2px;
+      grid-template-areas: " logo  side-B" " side-A  side-B" " side-A  side-B" " footer  side-B";
+}
+
+body main .side-A {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: side-A;
+}
+
+body main .side-A h1 {
+  padding: 0.4em 2rem;
+  text-transform: uppercase;
+  font-size: 4vw;
+  color: #ce9797;
+  font-weight: 600;
+}
+
+body main .side-A h1 span {
+  display: block;
+  padding-top: 2px;
+  color: #413a3a;
+  margin-bottom: 3rem;
+}
+
+body main .side-A > p {
+  width: 25em;
+  padding: 2em;
+}
+
+body main .side-A form {
+  position: relative;
+}
+
+body main .side-A form input {
+  padding: 0.75em 4em;
+  margin: 4.1rem 2rem;
+  border-radius: 26px;
+}
+
+body main .side-A form button {
+  height: 3em;
+  position: absolute;
+  border: 2px solid;
+  bottom: 65px;
+  left: 255px;
+  background-color: #f96262;
+  padding: 1em 2em;
+  border-radius: 26px;
+}
+
+body main footer {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: footer;
+}
+
+section.side-B {
+  background-image: url("../Imgs/hero-desktop.jpg");
+  height: 100vh;
+  background-repeat: no-repeat;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 4;
+  -ms-grid-column: 2;
+  grid-area: side-B;
+  background-size: 100% 100%;
+}
+
+@media (max-width: 400px) {
+  main {
+    display: -ms-grid;
+    display: grid;
+    overflow: auto;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    -ms-grid-rows: (4)[auto];
+        grid-template-rows: repeat(auto, 4);
+        grid-template-areas: " logo" " side-B" " side-A" " footer";
+  }
+  .side-B {
+    background-image: url("../Imgs/hero-mobile.jpg");
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 10% 0;
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: side-B;
+  }
+  .side-A {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: side-A;
+  }
+  .side-A p {
+    font-size: 20vw;
+  }
+  #logo {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: logo;
+  }
+  footer p {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    grid-area: footer;
+    margin: 0 2rem;
+    color: red;
+  }
+}
+/*# sourceMappingURL=main.css.map */
