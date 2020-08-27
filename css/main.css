@@ -23,7 +23,7 @@
 
 body {
   font-family: "Josefin Sans", sans-serif;
-  font-size: 1em;
+  font-size: 16px;
   background-image: url("../Imgs/bg-pattern-desktop.svg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -78,13 +78,13 @@ body main .side-A form input {
 }
 
 body main .side-A form button {
-  height: 3em;
+  height: 5.8vh;
   position: absolute;
   border: 2px solid;
   bottom: 65px;
   left: 255px;
   background-color: #f96262;
-  padding: 1em 2em;
+  padding: 0.73em 2em;
   border-radius: 26px;
 }
 
@@ -106,46 +106,64 @@ section.side-B {
 }
 
 @media (max-width: 400px) {
-  main {
+  body main {
     display: -ms-grid;
     display: grid;
-    overflow: auto;
     -ms-grid-columns: 100%;
         grid-template-columns: 100%;
-    -ms-grid-rows: (4)[auto];
-        grid-template-rows: repeat(auto, 4);
-        grid-template-areas: " logo" " side-B" " side-A" " footer";
+        grid-template-areas: "logo" "side-B" "side-A" "footer";
   }
-  .side-B {
-    background-image: url("../Imgs/hero-mobile.jpg");
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    margin: 10% 0;
+  body main section.side-B {
+    background-image: url(../Imgs/hero-mobile.jpg);
+    width: 100vw;
+    height: 50vh;
     -ms-grid-row: 2;
     -ms-grid-column: 1;
     grid-area: side-B;
   }
-  .side-A {
+  body main section.side-A {
     -ms-grid-row: 3;
     -ms-grid-column: 1;
     grid-area: side-A;
   }
-  .side-A p {
-    font-size: 20vw;
+  body main section.side-A h1 {
+    font-size: 10vw;
+    text-align: center;
   }
-  #logo {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    grid-area: logo;
+  body main section.side-A > p {
+    font-size: 4vw;
   }
-  footer p {
+  body main section.side-A form input, body main section.side-A form button {
+    font-size: 4vw;
+    height: auto;
+  }
+  body main footer {
     -ms-grid-row: 4;
     -ms-grid-column: 1;
     grid-area: footer;
-    margin: 0 2rem;
-    color: red;
+  }
+  body main footer a {
+    display: block;
+    text-align: center;
+    white-space: nowrap;
+  }
+  body main div#logo {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: logo;
+    height: 2vh;
+  }
+}
+
+@media (max-width: 300px) {
+  body main section.side-A button {
+    display: block;
+    height: 5.8vh;
+    position: absolute;
+    border: 2px solid;
+    bottom: 20px;
+    left: 30vw;
+    padding: 1em 5em;
   }
 }
 /*# sourceMappingURL=main.css.map */
