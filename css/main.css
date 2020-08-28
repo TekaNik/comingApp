@@ -68,24 +68,57 @@ body main .side-A > p {
 }
 
 body main .side-A form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
   position: relative;
+  max-width: 30vw;
+  margin-left: 2em;
 }
 
 body main .side-A form input {
-  padding: 0.75em 4em;
-  margin: 4.1rem 2rem;
-  border-radius: 26px;
+  background-color: #fff3f3;
+  font-size: 2vw;
+  padding: 5px 0 7px;
+  border: 2px solid #fbdede;
+  outline: none;
+  border-radius: 100vh 0 0 100vh;
+}
+
+body main .side-A form input::-webkit-input-placeholder {
+  font-size: 0.75em;
+  margin-bottom: 5em;
+  position: relative;
+  left: 1.5em;
+}
+
+body main .side-A form input:-ms-input-placeholder {
+  font-size: 0.75em;
+  margin-bottom: 5em;
+  position: relative;
+  left: 1.5em;
+}
+
+body main .side-A form input::-ms-input-placeholder {
+  font-size: 0.75em;
+  margin-bottom: 5em;
+  position: relative;
+  left: 1.5em;
+}
+
+body main .side-A form input::placeholder {
+  font-size: 0.75em;
+  margin-bottom: 5em;
+  position: relative;
+  left: 1.5em;
 }
 
 body main .side-A form button {
-  height: 5.8vh;
-  position: absolute;
-  border: 2px solid;
-  bottom: 65px;
-  left: 255px;
-  background-color: #f96262;
-  padding: 0.73em 2em;
-  border-radius: 26px;
+  border-radius: 20px;
+  background-color: #f19d9d;
+  padding: 0 2.3vw;
+  border: none;
 }
 
 body main footer {
@@ -105,7 +138,7 @@ section.side-B {
   background-size: 100% 100%;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
   body main {
     display: -ms-grid;
     display: grid;
@@ -133,9 +166,9 @@ section.side-B {
   body main section.side-A > p {
     font-size: 4vw;
   }
-  body main section.side-A form input, body main section.side-A form button {
+  body main section.side-A form button, body main section.side-A input {
     font-size: 4vw;
-    height: auto;
+    margin: 0 auto;
   }
   body main footer {
     -ms-grid-row: 4;
@@ -145,25 +178,12 @@ section.side-B {
   body main footer a {
     display: block;
     text-align: center;
-    white-space: nowrap;
   }
   body main div#logo {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: logo;
     height: 2vh;
-  }
-}
-
-@media (max-width: 300px) {
-  body main section.side-A button {
-    display: block;
-    height: 5.8vh;
-    position: absolute;
-    border: 2px solid;
-    bottom: 20px;
-    left: 30vw;
-    padding: 1em 5em;
   }
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,8 +1,6 @@
 @import "./resets";
 @import "./variables";
 
-
-
 .attribution {
     font-size: 15px;
 }
@@ -25,23 +23,18 @@ body {
 
     & main {
         // display: flex;
-    display: grid;
-    grid-template-columns: 1fr 1fr ;
-    grid-template-rows: 20% 1fr 1fr 5%;
-    gap: 2px;
-    grid-template-areas: 
-    " logo  side-B"
-    " side-A  side-B"
-    " side-A  side-B"
-    " footer  side-B"
-    
-            
-            ;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 20% 1fr 1fr 5%;
+        gap: 2px;
+        grid-template-areas:
+            " logo  side-B"
+            " side-A  side-B"
+            " side-A  side-B"
+            " footer  side-B";
 
         & .side-A {
-            
             grid-area: side-A;
-           
 
             & h1 {
                 padding: 0.4em 2rem;
@@ -57,48 +50,72 @@ body {
                     margin-bottom: 3rem;
                 }
             }
-            & >p {
+            & > p {
                 width: 25em;
                 padding: 2em;
-                
             }
+            // & form {
+            //     position: relative;
+
+            //     & input {
+            //         padding: 0.75em 4em;
+            //         margin: 4.1rem 2rem;
+            //         border-radius: 26px;
+
+            //     }
+            //     & button {
+            //         height: 5.8vh;
+            //         position: absolute;
+            //         border: 2px solid;
+            //         bottom: 65px;
+            //         left: 255px;
+
+            //         background-color: $button-bg-color;
+            //         padding: 0.73em 2em;
+            //         border-radius: 26px;
+            //     }
+            // }
             & form {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
                 position: relative;
-               
+                
+
+                // border: 2px solid burlywood;
+                
+                max-width: 30vw;
+                margin-left: 2em;
 
                 & input {
-                    padding: 0.75em 4em;
-                    margin: 4.1rem 2rem;
-                    border-radius: 26px;
+                    background-color: #fff3f3;
+                    font-size: 2vw;
+                    padding:5px 0 7px ;
+                    border: 2px solid #fbdede;
+                    outline: none;
+                    border-radius: 100vh 0 0 100vh;
+                    
 
-                    
-                    
-                
+                    &::placeholder{
+                        font-size: 0.75em;
+                        margin-bottom: 5em;
+                        position: relative;
+                        left: 1.5em;
+                    }
+                  
                 }
                 & button {
-                    height: 5.8vh;
-                    position: absolute;
-                    border: 2px solid;
-                    bottom: 65px;
-                    left: 255px;
-                    
                    
-                   
+                    border-radius: 20px ;
                     background-color: $button-bg-color;
-                    padding: 0.73em 2em;
-                    border-radius: 26px;
+                    padding: 0 2.3vw;
+                    border: none;
                 }
             }
-            
         }
         & footer {
-        
             grid-area: footer;
-    
-    
         }
     }
-    
 }
 
 section.side-B {
@@ -109,79 +126,55 @@ section.side-B {
     background-size: 100% 100%;
 }
 
-
-
-
-
-
 // Media Queries for Mobile version
 
-@media (max-width: 400px){
-   body{
+@media (max-width: 600px){
+    body {
+        & main {
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-areas:
+                "logo"
+                "side-B"
+                "side-A"
+                "footer";
 
-
-    & main{
-        
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-areas: 
-        "logo"
-        "side-B"
-        "side-A"
-        "footer"
-        ;
-       
-     & section.side-B{
-         background-image: url(../Imgs/hero-mobile.jpg);
-         width: 100vw;
-         height: 50vh;
-         grid-area: side-B;
-     }
-     & section.side-A{
-         grid-area: side-A;
-         & h1{
-             font-size: 10vw;
-             text-align: center;
-         }
-         & > p{
-             font-size: 4vw;
-         }
-         & form input , form button{
-             font-size: 4vw;
-
-             height: auto;
-         }
-     }
-     & footer{
-         grid-area: footer;
-         & a{
-             display: block;
-             text-align: center;
-             white-space: nowrap;
-         }
-     }
-     div#logo{
-         grid-area: logo;
-         height: 2vh;
-     }
- 
-    }
-   }
-}
-
-
-
-@media (max-width: 300px){
-    body main section.side-A button{
-       display: block;
-       height: 5.8vh;
-       position: absolute;
-       border: 2px solid;
-       bottom: 20px;
-       left: 30vw;
-       padding: 1em 5em;
-    
-       
-        
+            & section.side-B {
+                background-image: url(../Imgs/hero-mobile.jpg);
+                width: 100vw;
+                height: 50vh;
+                grid-area: side-B;
+            }
+            & section.side-A {
+                grid-area: side-A;
+                & h1 {
+                    font-size: 10vw;
+                    text-align: center;
+                }
+                & > p {
+                    font-size: 4vw;
+                }
+                & form button, input {
+                    font-size: 4vw;
+                    margin: 0 auto;
+                
+                }
+            }
+            & footer {
+                grid-area: footer;
+            
+                & a {
+                    display: block;
+                    text-align: center;
+                    
+                }
+            }
+            div#logo {
+                grid-area: logo;
+                height: 2vh;
+            }
+        }
     }
 }
+
+
