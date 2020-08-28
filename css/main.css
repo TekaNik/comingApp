@@ -65,6 +65,7 @@ body main .side-A h1 span {
 body main .side-A > p {
   width: 25em;
   padding: 2em;
+  color: #C4A7A7;
 }
 
 body main .side-A form {
