@@ -139,6 +139,10 @@ section.side-B {
   background-size: 100% 100%;
 }
 
+section.side-B h4 {
+  display: none;
+}
+
 @media (max-width: 600px) {
   body main {
     display: -ms-grid;

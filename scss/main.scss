@@ -125,6 +125,9 @@ section.side-B {
     background-repeat: no-repeat;
     grid-area: side-B;
     background-size: 100% 100%;
+    h4{
+        display: none;
+    }
 }
 
 // Media Queries for Mobile version
